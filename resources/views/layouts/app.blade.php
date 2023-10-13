@@ -6,6 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Larafel 10 - Task List app</title>
     @yield('styles')
+
+    <style>
+
+        .paginate svg {
+            height: 40px;
+        }
+
+    </style>
 </head>
 <body>
     <h1>@yield('title')</h1>
