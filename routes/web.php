@@ -49,13 +49,6 @@ Route::get('/tasks/{task}/edit', function (Task $task)  {
 
 Route::post('/tasks', function (TaskRequest $request) {
  
-  // $data = $request->validated();
-  // $task = new Task;
-  // $task->title = $data['title'];
-  // $task->description = $data['description'];
-  // $task->long_description = $data['long_description'];
-  // $task->save();
-
   $task = Task::create($request->validated());
 
 
@@ -68,13 +61,6 @@ Route::post('/tasks', function (TaskRequest $request) {
 
 Route::put('/tasks/{task}', function (Task $task, TaskRequest $request) {
  
-
-  //$data = $request->validated();
-  // $task->title = $data['title'];
-  // $task->description = $data['description'];
-  // $task->long_description = $data['long_description'];
-  // $task->save();
-
   $task->update($request->validated());
 
 
@@ -83,23 +69,18 @@ Route::put('/tasks/{task}', function (Task $task, TaskRequest $request) {
 
 })->name('tasks.update');
 
+Route::delete('/tasks/{task}', function (Task $task) {
+  $task->delete();
 
+  return redirect()->route('tasks.index')
+    ->with('success', 'Task deleted successfully');
+})->name('tasks.destroy');
 
-
-// Route::get('/xxx', function () {
-//     return 'Hello';
-// })->name('hello');
-
-// Route::get('/hallo', function () {
-//     return redirect()->route('hello');
-// });
-
-// Route::get('/greet/{name}', function ($name) {
-//     return 'Hello ' . $name . '';
-// });
 
 Route::fallback(function () {
     return 'Still got somewhere!';
 });
+
+
 
 
