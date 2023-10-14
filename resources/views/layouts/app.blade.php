@@ -6,6 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Larafel 10 - Task List app</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+
+    {{-- blade-formatter-disable --}}
+    <style type="text/tailwindcss">
+    .btn {
+        @apply rounded-md px-2 py-1 text-center font-medium shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-100 text-slate-700
+    }
+
+    .link {
+        @apply font-medium text-gray-700 underline decoration-pink-500
+    }
+
+    </style>
+    {{-- blade-formatter-enable --}}
+
     @yield('styles')
 
     <style>
