@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Larafel 10 - Task List app</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     @yield('styles')
 
     <style>
 
-        .paginate svg {
-            height: 40px;
-        }
+        
 
     </style>
 </head>
-<body>
-    <h1>@yield('title')</h1>
+<body class="cointainer mx-auto mt-10 mb-10 max-w-lg">
+    <h1 class="mb-4 text-2xl">@yield('title')</h1>
     <div>
         @if (session()->has('success'))
         <div>{{session('success')}}</div>
